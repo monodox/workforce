@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AiAppLogo } from "@/components/shared/ai-app-logo"
 import { ChatForm, ChatMessages, MessageInput, type Message } from "./chat"
 
 interface ChatPanelProps {
@@ -60,7 +61,7 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
       const errorMessage: Message = {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: `Error: ${error.message}`,
+        content: error.message || "Something went wrong. Please try again.",
       }
       setMessages((prev) => [...prev, errorMessage])
     } finally {
@@ -71,7 +72,10 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
   return (
     <div className="fixed top-14 right-0 z-40 h-[calc(100%-3.5rem)] w-full max-w-sm border-l bg-background shadow-xl flex flex-col">
       <div className="flex items-center justify-between border-b px-4 py-3">
-        <h2 className="text-sm font-semibold">Chat</h2>
+        <div className="flex items-center gap-2">
+          <AiAppLogo width={20} height={20} />
+          <h2 className="text-sm font-semibold">AI Assistant</h2>
+        </div>
         <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close chat">
           <X className="h-4 w-4" />
         </Button>

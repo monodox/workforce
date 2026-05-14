@@ -1,25 +1,36 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
-import { MessageCircle, PanelLeftClose, PanelLeftOpen } from "lucide-react"
+import { Menu, PanelLeftClose, PanelLeftOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/shared/theme-toggle"
+import { AiAppLogo } from "@/components/shared/ai-app-logo"
 import { ChatPanel } from "./chat-panel"
 
 interface ConsoleHeaderProps {
   sidebarOpen: boolean
   onToggleSidebar: () => void
+  onMobileMenuToggle?: () => void
+  onChatOpen?: () => void
 }
 
-export function ConsoleHeader({ sidebarOpen, onToggleSidebar }: ConsoleHeaderProps) {
+export function ConsoleHeader({ sidebarOpen, onToggleSidebar, onMobileMenuToggle, onChatOpen }: ConsoleHeaderProps) {
   const [chatOpen, setChatOpen] = useState(false)
+
+  const handleChatOpen = () => {
+    setChatOpen(true)
+    onChatOpen?.()
+  }
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex h-14 items-center border-b bg-background px-4 md:px-6">
+      <header className="sticky top-0 z-30 flex h-14 shrink-0 items-center border-b bg-background px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" onClick={onToggleSidebar} aria-label="Toggle sidebar">
+          {/* Mobile menu button */}
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={onMobileMenuToggle} aria-label="Open menu">
+            <Menu className="h-5 w-5" />
+          </Button>
+          {/* Desktop sidebar toggle */}
+          <Button variant="ghost" size="icon" className="hidden md:inline-flex" onClick={onToggleSidebar} aria-label="Toggle sidebar">
             {sidebarOpen ? (
               <PanelLeftClose className="h-5 w-5" />
             ) : (
@@ -28,12 +39,8 @@ export function ConsoleHeader({ sidebarOpen, onToggleSidebar }: ConsoleHeaderPro
           </Button>
         </div>
         <div className="ml-auto flex items-center gap-2">
-          <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors mr-2">
-            Back to site
-          </Link>
-          <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setChatOpen(true)} aria-label="Open chat">
-            <MessageCircle className="h-5 w-5" />
+          <Button variant="ghost" size="icon" onClick={handleChatOpen} aria-label="Open chat">
+            <AiAppLogo width={20} height={20} />
           </Button>
         </div>
       </header>

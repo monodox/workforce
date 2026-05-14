@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { Settings, HelpCircle, LogOut, ChevronUp } from "lucide-react"
+import { User, Settings, HelpCircle, LogOut, ChevronUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
@@ -27,12 +27,20 @@ export function ProfileBar({ collapsed = false }: ProfileBarProps) {
   }, [open])
 
   return (
-    <div ref={menuRef} className="relative border-t px-3 py-3">
+    <div ref={menuRef} className="relative mx-3 mb-3 rounded-lg border bg-background p-1">
       {open && (
         <div className={cn(
           "absolute bottom-full left-2 right-2 mb-2 rounded-md border bg-popover p-1 shadow-md z-50",
           collapsed && "left-0 right-auto w-48"
         )}>
+          <Link
+            href="/console/settings/profile"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+          >
+            <User className="h-4 w-4" />
+            Profile
+          </Link>
           <Link
             href="/console/settings"
             onClick={() => setOpen(false)}
