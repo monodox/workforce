@@ -8,10 +8,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/your-org/workforce/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a>
-  <a href="https://github.com/your-org/workforce/issues"><img src="https://img.shields.io/github/issues/your-org/workforce.svg" alt="Issues" /></a>
-  <a href="https://github.com/your-org/workforce/stargazers"><img src="https://img.shields.io/github/stars/your-org/workforce.svg" alt="Stars" /></a>
+  <a href="https://github.com/monodox/workforce/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" /></a>
+  <a href="https://github.com/monodox/workforce/issues"><img src="https://img.shields.io/github/issues/monodox/workforce.svg" alt="Issues" /></a>
+  <a href="https://github.com/monodox/workforce/stargazers"><img src="https://img.shields.io/github/stars/monodox/workforce.svg" alt="Stars" /></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a>
+  <a href="https://monodox.github.io/workforce/"><img src="https://img.shields.io/badge/docs-website-blue.svg" alt="Website" /></a>
 </p>
 
 ---
@@ -51,7 +52,7 @@ Whether you're building internal tools, managing teams, or experimenting with AI
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-org/workforce.git
+git clone https://github.com/monodox/workforce.git
 cd workforce
 
 # Install dependencies
@@ -161,5 +162,11 @@ See [CHANGELOG.md](CHANGELOG.md) for release history.
 ---
 
 <p align="center">
-  Made with ❤️ by the Workforce community
+  <a href="https://monodox.github.io/workforce/">Website</a> •
+  <a href="https://github.com/monodox/workforce">GitHub</a> •
+  <a href="https://github.com/monodox/workforce/issues">Issues</a>
+</p>
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/monodox">Monodox</a>
 </p>

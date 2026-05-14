@@ -9,8 +9,12 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            Thanks for opening your first issue on Workforce! 🎉
+            We'll review it shortly. In the meantime, check out our [Contributing Guide](https://github.com/monodox/workforce/blob/main/CONTRIBUTING.md).
+          pr-message: |
+            Thanks for your first pull request to Workforce! 🚀
+            A maintainer will review it soon. Please make sure `npm run build` and `npm run lint` pass.
