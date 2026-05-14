@@ -13,7 +13,7 @@ We take security seriously at Workforce. If you discover a security vulnerabilit
 ### How to Report
 
 1. **Do NOT** open a public GitHub issue for security vulnerabilities.
-2. Email us at **security@workforce.app** with:
+2. Email us at **security@monodox.com** with:
    - A description of the vulnerability
    - Steps to reproduce the issue
    - Potential impact assessment
@@ -54,4 +54,4 @@ The following are in scope:
 
 ## Contact
 
-For security concerns: **security@workforce.app**
+For security concerns: **security@monodox.com**
