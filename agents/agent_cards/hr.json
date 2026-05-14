@@ -1,0 +1,43 @@
+{
+  "name": "Workforce HR Agent",
+  "description": "Handles hiring, onboarding, employee relations, and HR policies.",
+  "url": "https://api.workforce.app/agents/hr",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": true
+  },
+  "authentication": {
+    "schemes": ["bearer"]
+  },
+  "skills": [
+    {
+      "id": "create-job-posting",
+      "name": "Create Job Posting",
+      "description": "Creates a new job posting for a department",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "department": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "required": ["title", "department"]
+      }
+    },
+    {
+      "id": "onboard-employee",
+      "name": "Onboard Employee",
+      "description": "Initiates the onboarding process for a new employee",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "start_date": { "type": "string" }
+        },
+        "required": ["name", "role", "start_date"]
+      }
+    }
+  ]
+}

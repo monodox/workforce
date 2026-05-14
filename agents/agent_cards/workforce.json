@@ -1,0 +1,20 @@
+{
+  "name": "Workforce Orchestrator",
+  "description": "Main orchestrator that routes tasks to specialized Workforce agents for enterprise workforce management.",
+  "url": "https://api.workforce.app",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "authentication": {
+    "schemes": ["bearer"]
+  },
+  "skills": [
+    {
+      "id": "route-task",
+      "name": "Route Task",
+      "description": "Analyzes a request and routes it to the appropriate specialized agent (HR, Finance, Ops, etc.)"
+    }
+  ]
+}

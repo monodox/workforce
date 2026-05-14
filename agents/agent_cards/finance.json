@@ -1,0 +1,42 @@
+{
+  "name": "Workforce Finance Agent",
+  "description": "Handles budgets, invoices, payroll, and financial reporting.",
+  "url": "https://api.workforce.app/agents/finance",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "authentication": {
+    "schemes": ["bearer"]
+  },
+  "skills": [
+    {
+      "id": "generate-report",
+      "name": "Generate Report",
+      "description": "Generates a financial report for a specified period",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "report_type": { "type": "string" },
+          "period": { "type": "string" }
+        },
+        "required": ["report_type", "period"]
+      }
+    },
+    {
+      "id": "create-invoice",
+      "name": "Create Invoice",
+      "description": "Creates a new invoice for a client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client": { "type": "string" },
+          "amount": { "type": "number" },
+          "description": { "type": "string" }
+        },
+        "required": ["client", "amount"]
+      }
+    }
+  ]
+}

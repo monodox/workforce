@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: workforce-agents-ingress
+  namespace: workforce
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "workforce-agents-ip"
+    networking.gke.io/managed-certificates: "workforce-cert"
+spec:
+  rules:
+    - host: api.workforce.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: workforce-agents
+                port:
+                  number: 80
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: workforce-cert
+  namespace: workforce
+spec:
+  domains:
+    - api.workforce.app
